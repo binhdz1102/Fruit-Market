@@ -85,7 +85,7 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                   title: Row(
                     children: [
                       Text(
-                        "440001 Nagpur, Maharastra",
+                        currentUser.address,
                         style: TextStyle(fontSize: 13),
                       ),
                       Icon(Icons.keyboard_arrow_down)

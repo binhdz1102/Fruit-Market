@@ -1,12 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Models/Category Items/category_items.dart';
+import '../Models/User/user_information.dart';
 import '../Models/item_product.dart';
 import '../Models/item_product_list.dart';
 
 
 List<ItemProduct> items = [];
 List<ItemProduct> shoppingCartList = [];
+late UserInformation currentUser;
 
 //fruits
 List<ItemProduct> itemProductFruitsLists = [];
@@ -40,12 +43,12 @@ CategoryItem categoryItem(String asString) {
 }
 
 List<String> nutritionItem(String asNutrition) {
-  String temp = " " + asNutrition.substring(1, asNutrition.length - 1);
-  return temp.split(",");
+  String temp =  asNutrition.substring(1, asNutrition.length - 1);
+  return temp.split(", ");
 }
 
 void initdata() async {
-///////////////////////////////////init items/////////////////////////////////////////
+///////////////////////////////////init items from cloud/////////////////////////////////////////
   CollectionReference productList =
       FirebaseFirestore.instance.collection('ItemProduct');
   await productList.get().then((snapshot) {
@@ -84,7 +87,7 @@ void initdata() async {
 
 
 
-/////////////////////////////////init list of list items/////////////////////////
+
 }
 
 var listFruitItem = ItemProductList(

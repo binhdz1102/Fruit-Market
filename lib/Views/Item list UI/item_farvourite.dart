@@ -100,17 +100,28 @@ class _ItemFavouriteState extends State<ItemFavourite> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8.0),
                 child:
-                // Image.asset(
-                //   item.imagePath,
-                //   width: 100,
-                //   height: 100,
-                //   fit: BoxFit.cover,
-                // ),
-                Image.network(
-                  item.imagePath,
+                    // Image.asset(
+                    //   item.imagePath,
+                    //   width: 100,
+                    //   height: 100,
+                    //   fit: BoxFit.cover,
+                    // ),
+
+                    // Image.network(
+                    //   item.imagePath,
+                    //   width: 100,
+                    //   height: 100,
+                    //   fit: BoxFit.cover,
+                    //
+                    // ),
+
+                    FadeInImage(
                   width: 100,
                   height: 100,
                   fit: BoxFit.cover,
+                  placeholder:
+                      AssetImage("assets/Placed Holder/placedholder.gif"),
+                  image: NetworkImage(item.imagePath),
                 ),
               ),
               flex: 2,
@@ -134,7 +145,7 @@ class _ItemFavouriteState extends State<ItemFavourite> {
                       maxLines: 1,
                       overflow: TextOverflow.fade,
                       style:
-                      TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                     ),
                   ),
                   Text(
@@ -163,7 +174,7 @@ class _ItemFavouriteState extends State<ItemFavourite> {
                             });
                           },
                           child: IconDecIncButton(
-                              signButton: '_', topPos: -1, leftPos: 8)
+                                  signButton: '_', topPos: -1, leftPos: 8)
                               .genIcon(),
                         ),
                       ),
@@ -176,7 +187,7 @@ class _ItemFavouriteState extends State<ItemFavourite> {
                         child: Align(
                           alignment: Alignment.center,
                           child:
-                          Text(item.getNumberFavouriteSelected.toString()),
+                              Text(item.getNumberFavouriteSelected.toString()),
                         ),
                       ),
 
@@ -197,7 +208,7 @@ class _ItemFavouriteState extends State<ItemFavourite> {
                             });
                           },
                           child: IconDecIncButton(
-                              signButton: '+', topPos: 4, leftPos: 8)
+                                  signButton: '+', topPos: 4, leftPos: 8)
                               .genIcon(),
                         ),
                       ),
@@ -225,7 +236,7 @@ class _ItemFavouriteState extends State<ItemFavourite> {
                       child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor:
-                          MaterialStateProperty.all(Colors.orange),
+                              MaterialStateProperty.all(Colors.orange),
                         ),
                         onPressed: () {
                           print("ban vua an nut Add");

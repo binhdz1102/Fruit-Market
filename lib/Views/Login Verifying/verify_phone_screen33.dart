@@ -19,8 +19,6 @@ class VerifyPhoneScreen extends StatefulWidget {
 class _VerifyPhoneScreenState extends State<VerifyPhoneScreen> {
   FirebaseAuth auth = FirebaseAuth.instance;
 
-  TextEditingController phoneController =
-      TextEditingController(text: "+84865935408");
   var o = ["", "", "", ""];
   int pos = 0;
 
@@ -35,7 +33,8 @@ class _VerifyPhoneScreenState extends State<VerifyPhoneScreen> {
 
   void loginWithPhone() async {
     auth.verifyPhoneNumber(
-      phoneNumber: phoneController.text,
+      phoneNumber:
+          "+84" + widget.phoneNumber.substring(1, widget.phoneNumber.length),
       verificationCompleted: (PhoneAuthCredential credential) async {
         await auth.signInWithCredential(credential).then((value) {
           print("You are logged in successfully");
@@ -58,6 +57,7 @@ class _VerifyPhoneScreenState extends State<VerifyPhoneScreen> {
   Widget build(BuildContext context) {
     loginWithPhone();
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Container(
         margin: EdgeInsets.fromLTRB(20, 50, 20, 25),
         child: Column(
