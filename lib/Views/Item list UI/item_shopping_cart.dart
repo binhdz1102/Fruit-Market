@@ -99,7 +99,7 @@ class _ItemShoppingCartState extends State<ItemShoppingCart> {
                   height: 8,
                 ),
                 Text(
-                  widget.item.price,
+                  "RS "+widget.item.price,
                   style: TextStyle(
                     fontSize: 12,
                     color: Colors.black,
@@ -110,7 +110,7 @@ class _ItemShoppingCartState extends State<ItemShoppingCart> {
                   height: 8,
                 ),
                 Text(
-                  "160 Per / kg",
+                  widget.item.price+" Per / kg",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),

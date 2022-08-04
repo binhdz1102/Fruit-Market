@@ -140,7 +140,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           currentUser = UserInformation(
                               name: "Manish Chutake",
                               imagePath:
-                              "//https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTiXjldHhFIVdvZDCeoq6sSzSzxg95OvLCxQ&usqp=CAU",
+                              "https://firebasestorage.googleapis.com/v0/b/marketfruits-de66d.appspot.com/o/mock%20images%2Favata.jpg?alt=media&token=9d9a6451-f34b-42a4-aa87-19c6d067cb07",
                               address: '440001 Nagpur, Maharastra',
                               email: 'manishuxuid@gmail.com',
                               uid: 'fakeUID0001');
@@ -183,7 +183,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         currentUser = UserInformation(
                             name: "Manish Chutake",
                             imagePath:
-                                "//https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTiXjldHhFIVdvZDCeoq6sSzSzxg95OvLCxQ&usqp=CAU",
+                                "https://firebasestorage.googleapis.com/v0/b/marketfruits-de66d.appspot.com/o/mock%20images%2Favata.jpg?alt=media&token=9d9a6451-f34b-42a4-aa87-19c6d067cb07",
                             address: '440001 Nagpur, Maharastra',
                             email: 'manishuxuid@gmail.com',
                             uid: 'fakeUID0001');

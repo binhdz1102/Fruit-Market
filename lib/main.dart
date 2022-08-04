@@ -25,7 +25,6 @@ void main() async {
   Hive.registerAdapter(CategoryItemAdapter());
   await Hive.openBox<ItemProduct>('itemproduct');
 
-
   await SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(AppHomePage());
@@ -40,7 +39,5 @@ class AppHomePage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: FirstScreen(),
     );
-
   }
-
 }
