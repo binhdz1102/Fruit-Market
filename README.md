@@ -1,5 +1,5 @@
 # Fruit Market 
-Dựng một ứng dụng Flutter đơn giản, bao gồm UI và xử lí dữ liệu cơ bản.
+Xây dựng một ứng dụng Flutter đơn giản, bao gồm UI và xử lí dữ liệu cơ bản.
 - Fruit Market: ứng dụng bán thực phẩm tươi cho nhà bán hàng.
 # Hướng dẫn: Nguyễn Phương Dung, Nguyễn Hoàng Long
 
