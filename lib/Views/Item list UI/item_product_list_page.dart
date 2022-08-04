@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../Models/item_product_list.dart';
-import 'item_product_home.dart';
+import 'item_product_page.dart';
 
 //tieu de cua category list
 //mo ta

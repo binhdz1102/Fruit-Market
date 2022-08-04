@@ -21,7 +21,6 @@ class _EnterPhoneScreenState extends State<StatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Container(
         margin: EdgeInsets.fromLTRB(20, 25, 20, 25),
         child: Column(
@@ -285,22 +284,7 @@ class _EnterPhoneScreenState extends State<StatefulWidget> {
                       color: Colors.white,
                       elevation: 0,
                       shape: const CircleBorder(),
-                      onPressed: () {
-                        if (chuoiso.length > 9) {
-                          print("So dien thoai vua nhap: ${chuoiso}");
-                          Navigator.pop(context);
-
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => LoaderAnimated(
-                                phoneNumber: chuoiso,
-                              ),
-                            ),
-                          );
-                        } else
-                          print("Chieu dai so dien thoai khong du");
-                      },
+                      onPressed: () {},
                       child: const Padding(
                         padding: EdgeInsets.all(5),
                         child: Text(

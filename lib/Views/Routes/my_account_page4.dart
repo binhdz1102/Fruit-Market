@@ -1,12 +1,9 @@
 import 'dart:io';
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fruitmarket/Data/initmock_data.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../fake_checking_information_from_cloud.dart';
 import 'favourites_page.dart';
 import '../Login Verifying/login_page23.dart';
 import 'help_page.dart';
@@ -124,21 +121,6 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
                           title: Text("Rate Us"),
                         ),
                         ListTile(
-                          onTap: (){
-
-
-
-
-                            ////////////////////testing checking user//////////////
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => CheckingUser()),
-                            );
-
-
-
-
-                          },
                           leading: Image.asset(
                             'assets/images/refer a friend.png',
                             height: 24,
@@ -158,13 +140,7 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
                           },
                         ),
                         ListTile(
-                          onTap: ()async{
-                            setState(() {
-                              items=[];
-                            });
-
-                            initdata();
-                              await FirebaseAuth.instance.signOut();
+                          onTap: (){
                             //dang xuat
                             Navigator.pop(context);
                             Navigator.push(
@@ -233,14 +209,14 @@ class _HeaderPageState extends State<HeaderPage> {
                         backgroundImage: image != null
                             ? AssetImage(image!.path) as ImageProvider
                             : NetworkImage(
-                                currentUser.imagePath),
+                                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTiXjldHhFIVdvZDCeoq6sSzSzxg95OvLCxQ&usqp=CAU"),
                       ),
                     ),
                     SizedBox(
                       height: 7,
                     ),
                     Text(
-                      currentUser.name,
+                      "Manish Chutake",
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -250,7 +226,7 @@ class _HeaderPageState extends State<HeaderPage> {
                       height: 5,
                     ),
                     Text(
-                      currentUser.email,
+                      "manishuxuid@gmail.com",
                       style: TextStyle(color: Colors.white),
                     )
                   ],

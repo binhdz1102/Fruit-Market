@@ -2,47 +2,17 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fruitmarket/firebase_storage2.dart';
-import 'package:fruitmarket/setting_sharedpreference.dart';
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/adapters.dart';
 
-import 'Data/ini_data_from_could.dart';
-import 'Data/mockdata2.dart';
-import 'Models/Category Items/category_items.dart';
-import 'Models/item_product.dart';
 import 'Views/Home Screen UI/home_page5.dart';
 import 'Data/initmock_data.dart';
-import 'Views/Login Verifying/login_page23.dart';
-import 'Views/Routes/my_account_page4.dart';
-import 'Views/Routes/notification_setting_page.dart';
-import 'Views/Routes/notifications_page.dart';
 import 'Views/Splash Screen Turtorial/loading_page28.dart';
-import 'cloudstorages.dart';
-import 'firebase_database_realtime.dart';
-import 'firebase_storage.dart';
-import 'get_object_from_cloud.dart';
-import 'localstorage.dart';
 import 'thu.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  //init firebase
-  await Firebase.initializeApp().whenComplete(() {
-    print("Init firebase completed!");
-  });
-
-  //init data
+   Firebase.initializeApp();
   initdata();
-
-
-  //init Hive
-  await Hive.initFlutter();
-  Hive.registerAdapter(ItemProductAdapter());
-  Hive.registerAdapter(CategoryItemAdapter());
-  await Hive.openBox<ItemProduct>('itemproduct');
-
-
   await SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   // await FirebaseAppCheck.instance.activate(
@@ -55,24 +25,20 @@ class AppHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Full App
-    // return MaterialApp(
-    //   title: "Fruit Market",
-    //   debugShowCheckedModeBanner: false,
-    //   home: FirstScreen(),
-    // );
+    return MaterialApp(
+      title: "Fruit Market 1",
+      debugShowCheckedModeBanner: false,
+      home: FirstScreen(),
+    );
 
     //apart app
-    // return MaterialApp(
-    //   title: "Fruit Market",
-    //   debugShowCheckedModeBanner: false,
-    //   home: HomeScreen(),
-    // );
+    return MaterialApp(debugShowCheckedModeBanner: false,home: HomeScreen(),);
 
     //first screen, ok
     // return MaterialApp(home: FirstScreen(),);
 
     //man hinh login, ok
-    return MaterialApp(debugShowCheckedModeBanner: false,home: LoginScreen(),);
+    // return MaterialApp(debugShowCheckedModeBanner: false,home: LoginScreen(),);
 
     //man hinh enter, ok
     // return MaterialApp(home: EnterPhoneScreen(),);
@@ -149,53 +115,8 @@ class AppHomePage extends StatelessWidget {
     //   home: LoaderAnimated(),
     // );
 
-    //hive storages
-    // return MaterialApp(
-    //   debugShowCheckedModeBanner: false,
-    //   home: Hivesaves(),
-    // );
-
-
-    //cloud storage
-    // return MaterialApp(
-    //   debugShowCheckedModeBanner: false,
-    //   home: Firebasetesting(),
-    // );
-
-    //test get object
-    // return MaterialApp(
-    //   debugShowCheckedModeBanner: false,
-    //   home: GetObjectFromCloud(),
-    // );
-
-    //image saving tested
-    // return MaterialApp(
-    //   debugShowCheckedModeBanner: false,
-    //   home: FirebaseStorageScreen2(),
-    // );
-
-    //man hinh shared preferences luu setting
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SettingSharedPreferences(),
-    );
-
-
-    //using realtime to store users information
-    // return MaterialApp(
-    //   debugShowCheckedModeBanner: false,
-    //   home: RealtimeDB(),
-    // );
-
-
-
-
 
     //man hinh Thu, testing tabbar
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Thu(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false,home: Thu(),);
   }
-
 }

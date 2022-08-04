@@ -1,23 +1,13 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:fruitmarket/Models/User/user_information.dart';
 
-import '../../Data/initmock_data.dart';
 import '../Home Screen UI/home_page5.dart';
 
 class EnterInfoScreen extends StatelessWidget {
-  final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
   final nameController = TextEditingController();
   final addressController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    ////////////testing///////////
-    final User? user = firebaseAuth.currentUser;
-    var uid = user?.uid;
-
-    print("UID: $uid");
-
     return Scaffold(
       body: Container(
         margin: EdgeInsets.fromLTRB(20, 50, 20, 25),
@@ -84,16 +74,8 @@ class EnterInfoScreen extends StatelessWidget {
                   ),
                   onPressed: () {
                     print("ban vua an nut verify");
-                    if (nameController.text.trim().length > 0 ) {
-                      //set user
-                      currentUser = UserInformation(
-                          name: nameController.text,
-                          uid: uid.toString(),
-                          email: "manishuxuid@gmail.com",
-                          imagePath: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTiXjldHhFIVdvZDCeoq6sSzSzxg95OvLCxQ&usqp=CAU",
-                        address: addressController.text.trim().length >0 ? addressController.text : "440001 Nagpur, Maharastra"
-                      ) ;
-
+                    if (nameController.text.trim().length > 0 &&
+                        addressController.text.trim().length > 0) {
                       Navigator.pop(context);
 
                       Navigator.push(

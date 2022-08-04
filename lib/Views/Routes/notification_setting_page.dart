@@ -1,12 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class NotificationSettingScreen extends StatefulWidget {
-  late bool sw1;
-  late bool sw2;
-  NotificationSettingScreen({required this.sw1,required this.sw2});
-
   @override
   State<StatefulWidget> createState() {
     return _NotificationSettingScreenState();
@@ -14,25 +9,10 @@ class NotificationSettingScreen extends StatefulWidget {
 }
 
 class _NotificationSettingScreenState extends State<NotificationSettingScreen> {
+  bool _swithmode1 = false;
+  bool _swithmode2 = false;
 
-   @override
-   void initState() {
-     super.initState();
-   }
-
-void saveSetting ()async {
-  final prefs = await SharedPreferences.getInstance();
-  prefs.setBool("sw1", widget.sw1);
-  prefs.setBool("sw2", widget.sw2);
-  print("Da save ${prefs.getBool("sw1")} and ${prefs.getBool("sw2")}");
-}
-
-   void dispose(){
-     saveSetting();
-     super.dispose();
-   }
-
-   @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -50,15 +30,15 @@ void saveSetting ()async {
               title: Text("My Account"),
               subtitle: Text("You will receive daily updates"),
               trailing: CupertinoSwitch(
-                value: widget.sw1,
+                value: _swithmode1,
                 onChanged: (bool value) {
                   setState(() {
-                    widget.sw1 = value;
+                    _swithmode1 = value;
                   });
                 },
               ),
-              onTap: ()  {
-                
+              onTap: () {
+                print("Ban vua bam vao my account");
               },
             ),
             Divider(),
@@ -71,10 +51,10 @@ void saveSetting ()async {
               title: Text("Pramotional Notifications"),
               subtitle: Text("You will receive daily updates"),
               trailing: CupertinoSwitch(
-                value: widget.sw2,
+                value: _swithmode2,
                 onChanged: (bool value) {
                   setState(() {
-                    widget.sw2 = value;
+                    _swithmode2 = value;
                   });
                 },
               ),
