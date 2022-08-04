@@ -60,13 +60,15 @@ class _ItemProductScreenState extends State<ItemProductScreen> {
                     },
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10.0),
-                      //add border radius
-                      child: Image.asset(
-                        item.imagePath,
-                        width: 143,
-                        height: 153,
-                        fit: BoxFit.cover,
-                      ),
+                      child:
+                        FadeInImage(
+                          width: 143,
+                          height: 153,
+                          fit: BoxFit.cover,
+                          placeholder:
+                          AssetImage("assets/Placed Holder/placedholder.gif"),
+                          image: NetworkImage(item.imagePath),
+                        )
                     ),
                   ),
                 ),

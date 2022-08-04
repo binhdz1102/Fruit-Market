@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import '../../Data/initmock_data.dart';
+import '../../Models/User/user_information.dart';
 import 'enter_phone_page32.dart';
 import '../Home Screen UI/home_page5.dart';
 
@@ -134,9 +136,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
                         User? auser = FirebaseAuth.instance.currentUser;
 
-                        /////////////////////////need to modify//////////////
                         if (auser != null) {
-
+                          currentUser = UserInformation(
+                              name: "Manish Chutake",
+                              imagePath:
+                              "//https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTiXjldHhFIVdvZDCeoq6sSzSzxg95OvLCxQ&usqp=CAU",
+                              address: '440001 Nagpur, Maharastra',
+                              email: 'manishuxuid@gmail.com',
+                              uid: 'fakeUID0001');
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -173,15 +180,19 @@ class _LoginScreenState extends State<LoginScreen> {
                       onPressed: () {
                         print("ban vua an dang nhap bang facebook");
 
+                        currentUser = UserInformation(
+                            name: "Manish Chutake",
+                            imagePath:
+                                "//https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTiXjldHhFIVdvZDCeoq6sSzSzxg95OvLCxQ&usqp=CAU",
+                            address: '440001 Nagpur, Maharastra',
+                            email: 'manishuxuid@gmail.com',
+                            uid: 'fakeUID0001');
                         Navigator.pop(context);
 
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => HomeScreen()),
                         );
-
-
-
                       },
                       label: Text(
                         "Log in with",

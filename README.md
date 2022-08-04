@@ -1,4 +1,4 @@
-# fruitmarket2
+# fruitmarket
 
 A new Flutter project.
 

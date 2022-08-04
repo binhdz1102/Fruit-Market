@@ -27,11 +27,17 @@ class DetailItem extends StatelessWidget {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: Image.asset(
+                  child:
+                  Image.network(
                     item.imagePath,
                     height: 176,
                     fit: BoxFit.cover,
                   ),
+                  // Image.asset(
+                  //   item.imagePath,
+                  //   height: 176,
+                  //   fit: BoxFit.cover,
+                  // ),
                 ),
                 SizedBox(
                   height: 20,

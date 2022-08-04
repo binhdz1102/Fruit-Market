@@ -85,7 +85,7 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                   title: Row(
                     children: [
                       Text(
-                        "440001 Nagpur, Maharastra",
+                        currentUser.address,
                         style: TextStyle(fontSize: 13),
                       ),
                       Icon(Icons.keyboard_arrow_down)
@@ -136,18 +136,18 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                             ),
                             /////////////DANH SACH ITEMS CUA TIEU DE/////////////////
                             ListView.separated(
-                                shrinkWrap: true,
-                                physics: NeverScrollableScrollPhysics(),
-                                itemCount: Alist[index].length,
-                                separatorBuilder:
-                                    (BuildContext context, int index) =>
-                                        Divider(),
-                                itemBuilder:
-                                    (BuildContext context, int index2) {
-                                  return ItemShoppingCart(
-                                      notifyParent: refresh,
-                                      id: Alist[index][index2].id);
-                                }),
+                              shrinkWrap: true,
+                              physics: NeverScrollableScrollPhysics(),
+                              itemCount: Alist[index].length,
+                              separatorBuilder:
+                                  (BuildContext context, int index) =>
+                                      Divider(),
+                              itemBuilder: (BuildContext context, int index2) {
+                                return ItemShoppingCart(
+                                    notifyParent: refresh,
+                                    item: Alist[index][index2]);
+                              },
+                            ),
                           ],
                         );
                       }),
@@ -206,6 +206,3 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
     );
   }
 }
-
-
-

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'account_setting_page.dart';
 import 'change_address_page2.dart';
@@ -39,11 +40,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
               },
             ),
             ListTile(
-              onTap: () {
+              onTap: () async{
+                final prefs = await SharedPreferences.getInstance();
+                bool sw1 = prefs.getBool("sw1") ?? false;
+                bool sw2 = prefs.getBool("sw2")?? false;
+
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => NotificationSettingScreen()),
+                      builder: (context) => NotificationSettingScreen(sw1: sw1 ,sw2: sw2,)),
                 );
               },
               leading: Icon(

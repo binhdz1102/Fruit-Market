@@ -7,10 +7,10 @@ import '../Button UI/add_subtract_button.dart';
 import '../Routes/detail_item_page6.dart';
 
 class ItemShoppingCart extends StatefulWidget {
-  late int id;
+  late ItemProduct item;
   late Function notifyParent;
 
-  ItemShoppingCart({required this.notifyParent, required this.id});
+  ItemShoppingCart({required this.notifyParent, required this.item});
 
   @override
   State<StatefulWidget> createState() {
@@ -44,7 +44,6 @@ class _ItemShoppingCartState extends State<ItemShoppingCart> {
 
   @override
   Widget build(BuildContext context) {
-    ItemProduct item = _findItemById(widget.id);
     return Container(
       height: 120,
       padding: EdgeInsets.fromLTRB(16, 8, 16, 8),
@@ -52,7 +51,8 @@ class _ItemShoppingCartState extends State<ItemShoppingCart> {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => DetailItem(item: item)),
+            MaterialPageRoute(
+                builder: (context) => DetailItem(item: widget.item)),
           );
         },
         child: Row(
@@ -62,12 +62,19 @@ class _ItemShoppingCartState extends State<ItemShoppingCart> {
 
             ClipRRect(
               borderRadius: BorderRadius.circular(8.0),
-              child: Image.asset(
-                item.imagePath,
+              child:
+              Image.network(
+                widget.item.imagePath,
                 fit: BoxFit.cover,
                 width: 100,
                 height: 100,
               ),
+            //   Image.asset(
+            //     widget.item.imagePath,
+            //     fit: BoxFit.cover,
+            //     width: 100,
+            //     height: 100,
+            //   ),
             ),
 
             SizedBox(
@@ -81,7 +88,7 @@ class _ItemShoppingCartState extends State<ItemShoppingCart> {
                 SizedBox(
                   width: 90,
                   child: Text(
-                    item.name,
+                    widget.item.name,
                     softWrap: false,
                     maxLines: 1,
                     overflow: TextOverflow.fade,
@@ -92,7 +99,7 @@ class _ItemShoppingCartState extends State<ItemShoppingCart> {
                   height: 8,
                 ),
                 Text(
-                  item.price,
+                  widget.item.price,
                   style: TextStyle(
                     fontSize: 12,
                     color: Colors.black,
@@ -119,7 +126,9 @@ class _ItemShoppingCartState extends State<ItemShoppingCart> {
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Text(
-                  "Rs " + (int.parse(item.price) - 160).toString() + " Saved",
+                  "Rs " +
+                      (int.parse(widget.item.price) - 160).toString() +
+                      " Saved",
                   style: TextStyle(color: Colors.green, fontSize: 12),
                 ),
               ),
@@ -134,10 +143,11 @@ class _ItemShoppingCartState extends State<ItemShoppingCart> {
                 children: [
                   InkWell(
                     onTap: () {
-                      print("You have deleted item ${item.name}");
+                      print("You have deleted item ${widget.item.name}");
                       setState(() {
-                        shoppingCartList
-                            .removeWhere((element) => element.id == widget.id);
+                        shoppingCartList.removeWhere(
+                            (element) => element.id == widget.item.id);
+                        widget.item.setNumberShoppingSelected = 0;
                         widget.notifyParent();
                       });
                     },
@@ -157,16 +167,16 @@ class _ItemShoppingCartState extends State<ItemShoppingCart> {
                           padding: EdgeInsets.all(0),
                           onPressed: () {
                             setState(() {
-                              if (item.getNumberShoppingSelected > 1) {
-                                item.setNumberShoppingSelected =
-                                    item.getNumberShoppingSelected - 1;
+                              if (widget.item.getNumberShoppingSelected > 1) {
+                                widget.item.setNumberShoppingSelected =
+                                    widget.item.getNumberShoppingSelected - 1;
                                 shoppingCartList;
                                 widget.notifyParent();
                               }
                             });
                           },
                           child: IconDecIncButton(
-                              signButton: '_', topPos: -1, leftPos: 8)
+                                  signButton: '_', topPos: -1, leftPos: 8)
                               .genIcon(),
                         ),
                       ),
@@ -178,8 +188,8 @@ class _ItemShoppingCartState extends State<ItemShoppingCart> {
                         padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
                         child: Align(
                           alignment: Alignment.center,
-                          child:
-                          Text(item.getNumberShoppingSelected.toString()),
+                          child: Text(
+                              widget.item.getNumberShoppingSelected.toString()),
                         ),
                       ),
 
@@ -191,17 +201,17 @@ class _ItemShoppingCartState extends State<ItemShoppingCart> {
                           padding: EdgeInsets.all(0),
                           onPressed: () {
                             setState(() {
-                              if (item.getNumberShoppingSelected <
+                              if (widget.item.getNumberShoppingSelected <
                                   limitedProduct) {
-                                item.setNumberShoppingSelected =
-                                    item.getNumberShoppingSelected + 1;
+                                widget.item.setNumberShoppingSelected =
+                                    widget.item.getNumberShoppingSelected + 1;
                                 shoppingCartList;
                                 widget.notifyParent();
                               }
                             });
                           },
                           child: IconDecIncButton(
-                              signButton: '+', topPos: 4, leftPos: 8)
+                                  signButton: '+', topPos: 4, leftPos: 8)
                               .genIcon(),
                         ),
                       ),
