@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fruitmarket/Views/Home%20Screen%20UI/home_page5.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 
@@ -39,5 +40,6 @@ class AppHomePage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: FirstScreen(),
     );
+
   }
 }

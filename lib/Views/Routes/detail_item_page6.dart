@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:fruitmarket/Views/Routes/wishlist_page9.dart';
 import '../../Data/initmock_data.dart';
 import '../../Models/item_product.dart';
 import 'shopping_cart_page.dart';
@@ -117,23 +118,23 @@ class DetailItem extends StatelessWidget {
                     onPressed: () {
                       print("ban vua an nut buy now");
 
-                      bool exits = shoppingCartList
-                          .any((element) => element.id == item.id);
-                      if (!exits) {
-                        shoppingCartList.add(item);
-                      }
-                      item.setNumberShoppingSelected =
-                          item.getNumberShoppingSelected + 1;
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ShoppingCartScreen()),
-                      );
+                      // bool exits = shoppingCartList
+                      //     .any((element) => element.id == item.id);
+                      // if (!exits) {
+                      //   shoppingCartList.add(item);
+                      // }
+                      // item.setNumberShoppingSelected =
+                      //     item.getNumberShoppingSelected + 1;
                       // Navigator.push(
                       //   context,
                       //   MaterialPageRoute(
-                      //       builder: (context) => WishListScreen(billNumber: int.parse(item.price),)),
+                      //       builder: (context) => ShoppingCartScreen()),
                       // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => WishListScreen(billNumber: int.parse(item.price),)),
+                      );
                     },
                     child: Text(
                       "Buy Now",
