@@ -15,9 +15,9 @@ Xây dựng một ứng dụng Flutter đơn giản, bao gồm UI và xử lí d
 ## Mục tiêu làm project:
 - Áp dụng 1 cách hợp lí nhiều thư viện vào Project nhất có thể biết thêm nhiều kiến thức làm App Flutter :D
 - Tìm hiểu quy trình làm app, vòng đời của 1 sản phẩm.
-- Có thêm kinh nghiệm xây dựng, xử lí code, môi trường làm việc trong thực tế.
+- Có thêm kinh nghiệm xây dựng, xử lí code, biết thêm về môi trường làm việc trong thực tế.
 - Hoàn thành kì thực tập.
-
+- Tìm kiếm cơ hội làm việc tại 2NF
 
 ## Yêu cầu về phần mềm.
 
