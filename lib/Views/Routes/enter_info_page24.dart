@@ -101,7 +101,20 @@ class EnterInfoScreen extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => HomeScreen()),
                       );
                     } else
-                      print("Hay nhap chinh xac thong tin");
+                      currentUser = UserInformation(
+                          name: "Manish Chutake",
+                          uid: uid.toString(),
+                          email: "manishuxuid@gmail.com",
+                          imagePath: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTiXjldHhFIVdvZDCeoq6sSzSzxg95OvLCxQ&usqp=CAU",
+                          address: addressController.text.trim().length >0 ? addressController.text : "440001 Nagpur, Maharastra"
+                      ) ;
+
+                    Navigator.pop(context);
+
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()),
+                    );
                   },
                   child: Text(
                     "VERIFY",
