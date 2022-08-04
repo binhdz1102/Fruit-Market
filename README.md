@@ -17,7 +17,7 @@ Xây dựng một ứng dụng Flutter đơn giản, bao gồm UI và xử lí d
 - Tìm hiểu quy trình làm app, vòng đời của 1 sản phẩm.
 - Có thêm kinh nghiệm xây dựng, xử lí code, biết thêm về môi trường làm việc trong thực tế.
 - Hoàn thành kì thực tập.
-- Tìm kiếm cơ hội làm việc tại 2NF
+- Tìm kiếm cơ hội làm việc tại 2NF :DD
 
 ## Yêu cầu về phần mềm.
 
