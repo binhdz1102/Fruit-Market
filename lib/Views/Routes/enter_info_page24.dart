@@ -96,7 +96,7 @@ class EnterInfoScreen extends StatelessWidget {
 
                       Navigator.pop(context);
 
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(builder: (context) => HomeScreen()),
                       );

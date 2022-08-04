@@ -32,19 +32,6 @@ class _EnterPhoneScreenState extends State<StatefulWidget> {
                 children: [
                   Stack(
                     children: [
-                      // TextField(
-                      //   keyboardType: TextInputType.number,
-                      //   controller: phoneController,
-                      //   decoration: InputDecoration(
-                      //     hintText: '             9823868582',
-                      //     border: OutlineInputBorder(
-                      //       borderRadius: BorderRadius.circular(15),
-                      //       borderSide: BorderSide(
-                      //         width: 2,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
 
                       //in day so phia sau
                       Container(

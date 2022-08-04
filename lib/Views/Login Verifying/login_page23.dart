@@ -100,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: TextButton(
                 onPressed: () {
                   print("Ban vua an chuyen sang man hinh enter phone");
-                  // Navigator.pop(context);
+                  Navigator.pop(context);
                   Navigator.push(
                       context,
                       MaterialPageRoute(

@@ -138,10 +138,10 @@ class _VerifyPhoneScreenState extends State<VerifyPhoneScreen> {
                           onPressed: () {
                             print("ban vua an nut verify");
                             if (pos > 3) {
-                              Navigator.pop(context);
+
 
                               verifyOTP();
-
+                              Navigator.pop(context);
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
