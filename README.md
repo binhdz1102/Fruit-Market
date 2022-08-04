@@ -19,7 +19,7 @@ Xây dựng một ứng dụng Flutter đơn giản, bao gồm UI và xử lí d
 - Hoàn thành kì thực tập.
 - Tìm kiếm cơ hội làm việc tại 2NF :DD
 
-## Yêu cầu về phần mềm.
+## Yêu cầu về phần mềm:
 
 **Phiên bản:**
 - Sử dụng phiên bản Flutter > 2.0, hỗ trợ Null Safety.
