@@ -24,7 +24,7 @@ Xây dựng một ứng dụng Flutter đơn giản, bao gồm UI và xử lí d
 **Phiên bản:**
 - Sử dụng phiên bản Flutter > 2.0, hỗ trợ Null Safety.
 
-## Một số Demo sản phẩm:
+## Một số hình ảnh Demo sản phẩm:
 - Sử dụng 3 số điện thoại mẫu để đăng nhập hoặc có thể nhập ngẫu nhiên số có độ dài > 11 chữ số (phần verify OTP có thể nhập ngẫu nhiên)
 
 ![image](https://user-images.githubusercontent.com/92351087/182918208-aa59d93c-cfe4-4242-a0c3-3d67cb4c567e.png)
