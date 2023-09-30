@@ -17,7 +17,6 @@ Xây dựng một ứng dụng Flutter đơn giản, bao gồm UI và xử lí d
 - Chạy được ứng dụng trên thiết bị Android hoạt động tốt trên thực tế.
 - Có thêm kinh nghiệm xây dựng, xử lí code, biết thêm về môi trường làm việc trong thực tế.
 - Hoàn thành kì thực tập.
-- Tìm kiếm cơ hội làm việc tại 2NF :DD
 
 ## Yêu cầu về phần mềm:
 
